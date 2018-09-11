@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Canvas Intro</title>
+    </head>
+    <body>
+        <canvas height="500" width="500" style="border: 2px solid #000;" id="ctx"></canvas>
+    </body>
+    <script>
+        var ctx = document.getElementById('ctx').getContext('2d');
+        ctx.font= '30px Calibri';
+        ctx.fillText("Sample",200,100);
+        ctx.save(); // saves
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(200,200,100,100);
+        
+        ctx.restore() //restores from save
+        ctx.fillText("Sample",200,400);
+    </script>
+</html>

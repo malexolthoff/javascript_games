@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas height="500" width="500" style="border: 2px solid black;" id="ctx">
+
+    </canvas>
+    <script>
+        var ctx = document.getElementById('ctx').getContext('2d');
+        var square = {
+            width: 200,
+            height: 200,
+            xPosition: 100,
+            yPosition: 200, 
+            color: 'red'
+        };
+        ctx.save();
+
+        ctx.fillStyle = square.color;
+        ctx.fillRect(square.xPosition,square.yPosition,square.width,square.height);
+        ctx.restore();
+    </script>
+</body>
+</html>

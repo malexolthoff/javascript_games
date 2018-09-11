@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas height="500" width="500" style="border: 2px solid black;" id="ctx">
+
+    </canvas>
+    <script>
+    var ctx = document.getElementById('ctx').getContext('2d');
+    
+    document.getElementById('ctx').onmousedown = function() {
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(100,100,50,50);
+    }
+    document.getElementById('ctx').onmouseup = function() {
+        ctx.fillStyle = 'red';
+        ctx.fillRect(100,100,50,50);
+    }
+    document.onkeydown = function(event) {
+        if (event.keyCode == 32) {
+            ctx.fillText('Space bar is pressed',250,350)
+        }
+    }
+    </script>
+</body>
+</html>
