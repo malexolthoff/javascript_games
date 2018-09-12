@@ -16,21 +16,38 @@
 
         let snakeBody = {
             width:20,
-            height:20
-        }
+            height:20,
+            color: 'red'
+        };
         
         let food = {
             width:20,
-            height:20
-        }
+            height:20,
+            color: 'blue'
+        };
 
         // only keep the constants in the objects
-
+        drawSnake = function(sb,i) {
+            ctx.save();
+            if (i==0) 
+                ctx.fillStyle = 'black';
+            else 
+                ctx.fillStyle = snakeBody.color;
+            ctx.fillRect(sb.x,sb.y,snakeBody.width,snakeBody.height)
+            ctx.restore();
+        }
+        drawFood = function(f,i) {
+            ctx.save()
+            ctx.fillStyle = food.color;
+            ctx.fillStyle = (f.x,f.y,food.width,food.height)
+            ctx.restore()
+        }
+        // Sb = snake body
+        // i = index
         startGame = function() {
             snakeList = [
-                {
-                    x:220,
-                    y:200
+                {x:220,
+                y:200
                 },
                 { x: 210,
                   y:200  
@@ -41,7 +58,10 @@
                 }
             ];
             foodList = []
+
+            snakeList.forEach(drawSnake);
         }
+        startGame();
     </script>
 </body>
 </html>
